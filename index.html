@@ -13,6 +13,10 @@
         .welcome{background-color: plum;color: white;font-size: 16pt;text-align: center;height: 40px;margin: 0px;}
         .main-text{width:60%;float: left;background-color: beige;}
         .divs{margin: 5px;width: 25%;float: left;border: 4px solid lightblue;}
+        .red {color:red}
+        .blue {color:blue}
+        input[type="button"]{
+        background-color: pink;}
     </style>
 </head>
 <body>
@@ -42,6 +46,32 @@
         Colour: Green<br>
         Value: Over ft10 million
     </div>
+    <div style="width: 500px; height: 100px;background-color: lightblue;text-align: center;">
+        <br> The House of Volkov
+        
+    </div>
+    <div style="width: 500px; height: 400px;background-color: rgb(184, 233, 184);">
+        <p>Special Exhibition To-Do-List</p>
+        <input type="text"id='box'><br>
+        <input type="button"id='add'value='Add item'background-color='red' onclick="add_Item();b();">
+        <div id="list"></div>
+        
+    <script>
+        function add_Item(){  
+            var newItem = document.createElement("div");
+            newItem.innerHTML = document.getElementById("box").value;
+            newItem.onclick = removeItem;
+            document.getElementById("list").appendChild(newItem)
+            }
+        function b(){
+            document.getElementById("box").value = '';
+        }
+        function removeItem(){
+            document.getElementById("list").removeChild(this);
+        }
+    </script>
+    
+    
 </body>
 </html> 
 </html>
